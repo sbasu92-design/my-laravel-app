@@ -10,11 +10,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Admin List</h1>
+            <h1 class="m-0">Category List</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-             <a  href="{{ route('admin.addadmin') }}" class="btn btn-primary"> Add New Admin </a>
+             <a  href="{{ route('admin.addcategory') }}" class="btn btn-primary"> Add New Category </a>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -39,41 +39,42 @@
                   <thead>
                   <tr>
                     <th>Sl No.</th>
-                    <th>Image</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Slug</th>
+                    <th>Meta Title</th>
+                    <th>Meta Description</th>
+                    <th>Meta Keyword</th>
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
 
-                 @foreach($getRecord as $record)
-                 
+                  @foreach($getRecord as $record)
 
                   <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>  <img src="{{ $record->getProfileImageUrl() }}" 
-                    alt="Profile Image" width="50" height="50" class="img-thumbnail"></td>
-                    <td>{{$record->name}}</td>
-                    <td>{{$record->email}}</td>
-                    <td>{{ ($record->is_active== 1) ? 'Active' : 'Inactive'}}</td>
+                    <td>{{$record->name}} </td>
+                    <td>{{$record->slug}}</td>
+                    <td>{{$record->meta_title}}</td>
+                    <td>{{$record->meta_description}}</td>
+                    <td>{{$record->meta_keyword}}</td>
+                    <td>{{ ($record->status== 1) ? 'Active' : 'Inactive'}}</td>
                     <td>
-                    <a href="{{ route('admin.editadmin', ['id' => encrypt($record->id)]) }}" class="btn btn-primary">Edit</a>
-                    <a  href="{{ route('admin.deleteadmin' , ['id' => encrypt($record->id)]) }}" onclick="return confirm('Are you sure you want to delete this record?');" class="btn btn-danger"> Delete </a>
-
+                  
                     </td>
                   </tr>
                   @endforeach
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>Sl No.</th>
-                    <th>Image</th>
+                  <th>Sl No.</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Slug</th>
+                    <th>Meta Title</th>
+                    <th>Meta Description</th>
+                    <th>Meta Keyword</th>
                     <th>Status</th>
-                    
                     <th>Action</th>
                   </tr>
                   </tfoot>

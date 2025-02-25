@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('admin/login', [AuthController::class, 'login'])->name('admin.login');
@@ -21,8 +22,10 @@ Route::middleware(['auth:admin'])->group(function () {
     // Route::get('admin/list', function () {
     //     $data['header_title'] = "Admin";
     //     return view('admin.list', $data); // Ensure this view exists
-    // })->name('admin.list');
-    Route::get('admin/categorylist', [AdminController::class, 'categorylistall'])->name('admin.categorylist');
+    // })->name('admin.list'); isertcategory
+    Route::get('admin/categorylist', [CategoryController::class, 'categorylistall'])->name('admin.categorylist');
+    Route::get('admin/addcategory', [CategoryController::class, 'addcategory'])->name('admin.addcategory');
+    Route::post('/admin/isertcategory', [CategoryController::class, 'isertcategory'])->name('admin.isertcategory');
 
     Route::get('admin/logout', [AuthController::class, 'admin_logout'])->name('admin.logout');
 });

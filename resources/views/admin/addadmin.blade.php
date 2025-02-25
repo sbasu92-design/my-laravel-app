@@ -38,28 +38,28 @@
               @csrf
                 <div class="card-body">
                 <div class="form-group">
-                    <label for="fullname">Full Name</label>
+                    <label for="fullname">Full Name <span class="mandatory-span"> * </span></label>
                     <input type="text" class="form-control" id="fullname" name="name" placeholder="Enter Name">
                     @error('name')
                       <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="InputEmail1">Email address</label>
+                    <label for="InputEmail1">Email address <span class="mandatory-span"> * </span> </label>
                     <input type="email" class="form-control" id="InputEmail1" name="email" placeholder="Enter email">
                     @error('email')
                       <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label for="exampleInputPassword1">Password <span class="mandatory-span"> * </span> </label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                     @error('password')
                       <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                     <div class="form-group">
-                        <label for="InputFile">Profile Image</label>
+                        <label for="InputFile">Profile Image <span class="mandatory-span"> * </span> </label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="InputFile" name="profile_image" accept="image/*" onchange="updateFileName()">
@@ -71,7 +71,7 @@
                         @enderror
                   </div>
                   <div class="fform-group">
-                    <label  for="activestatus">Active Status</label>
+                    <label  for="activestatus">Active Status <span class="mandatory-span"> * </span></label>
                     <select  class="form-control" id="activestatus" name="is_active" placeholder="Enter Active Status">
                     <option value="" selected disabled>Select Data</option>
                       <option value="1">Active</option>

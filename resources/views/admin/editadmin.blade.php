@@ -38,14 +38,14 @@
               @csrf
                 <div class="card-body">
                 <div class="form-group">
-                    <label for="fullname">Full Name</label>
+                    <label for="fullname">Full Name <span class="mandatory-span"> * </span> </label>
                     <input type="text" class="form-control" id="fullname" name="name" value="{{$admin->name}}" placeholder="Enter Name">
                     @error('name')
                       <div class="text-danger">{{ $message }}</div>
                     @enderror
                   </div>
                   <div class="form-group">
-                    <label for="InputEmail1">Email address</label>
+                    <label for="InputEmail1">Email address <span class="mandatory-span"> * </span></label>
                     <input type="email" class="form-control" id="InputEmail1" name="email" value="{{$admin->email}}" placeholder="Enter email">
                     @error('email')
                       <div class="text-danger">{{ $message }}</div>
@@ -74,7 +74,7 @@
                         @enderror
                   </div>
                   <div class="fform-group">
-                    <label  for="activestatus">Active Status</label>
+                    <label  for="activestatus">Active Status <span class="mandatory-span"> * </span></label>
                     <select  class="form-control" id="activestatus" name="is_active" placeholder="Enter Active Status">
                     <option value="" selected disabled>Select Data</option>
                       <option {{ ($admin->is_active ==1) ? 'selected' : '' }} value="1">Active</option>

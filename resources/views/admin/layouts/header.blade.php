@@ -193,14 +193,26 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('admin.categorylist') }}"  class="nav-link @if(Request::segment(2)=='categorylist'  ) active @endif">
-            <i class="nav-icon fas fa-user"></i>
+            <a href="{{ route('admin.categorylist') }}"  class="nav-link @if(Request::segment(2)=='categorylist' || Request::segment(2)=='addcategory' ) active @endif">
+            <i class="nav-icon fas fa-list-alt"></i>
               <p>
                 Category List
                 
               </p>
             </a>
           </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin.categorylist') }}"  class="nav-link @if(Request::segment(2)=='productlist'  ) active @endif">
+            <i class="nav-icon fas fa-list-alt"></i>
+              <p>
+                Product
+                
+              </p>
+            </a>
+          </li>
+
+          
           
 
           <li class="nav-item">

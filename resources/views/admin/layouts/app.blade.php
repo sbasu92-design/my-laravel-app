@@ -13,6 +13,12 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('public/assets/dist/css/adminlte.min.css')}}">
+  <style>
+    .mandatory-span{
+      color: #FF0000;
+    }
+
+  </style>
   @yield('style')
 </head>
 <!--

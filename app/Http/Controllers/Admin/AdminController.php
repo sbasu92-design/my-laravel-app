@@ -133,11 +133,5 @@ class AdminController extends Controller
 
     }
 
-    public function categorylistall()
-    {
-        $data['getRecord'] = Admin::getAdmin();
-        $data['header_title'] = "Admin";
-        return view('admin.categorylist', $data);
-    }
-
+    
 }
